@@ -42,13 +42,12 @@ Working on it turned up three more defects in the same client retry path and one
 ## Effect on callers
 
 - `Instrument.LockinAPI:getStatus.vi` against an unresponsive lock-in now returns error 123 after about `7 x timeout`, instead of error 91.
-- A slow reply is now retried with the original command and the caller's timeout, instead of being answered with the `HELP` reply.
+- A slow reply is now retried with the original command and the caller's timeout, instead of being answered with the `HELP` reply. Re-sending the original command, even one that starts or changes something, is the intended behaviour of the retry.
 
 Callers that show errors in a modal dialog still stop there: see levylabpitt/Transport#180.
 
 ## Later, not in this round
 
-- **Re-sending runs a command again.** A retry now re-sends the real request, so a slow server can run a non-idempotent command (`startSweep`, `startDAQ`, set commands) more than once. Options: retry only commands marked idempotent, or have the server drop request IDs it has already seen.
 - **`Send and Receive Message.vi` in levylabpitt/RemoteControl** turns a reply whose `Message.error` is set into `Command = "error"`, `Data = <error cluster>`, and leaves `error out` clean. ZMQ never sets `Message.error`, but other transports would hide server errors the same way.
 - **The installed lock-in exe** has RemoteControl.ZMQ built in. Its server side uses `Close Connection.vi` and `ZMQ.Handle Error.vi` too, so rebuild it once this package is released.
 
