@@ -1,6 +1,6 @@
 # Issue #1 - Client timeout returns an empty reply with no error (change spec)
 
-**Status.** Implemented on `develop` on 2026-10-13. Covered by the Caraya suite `src/RemoteControl.ZMQ/Tests/unit tests/Run All Tests.vi` (7 tests, all passing). This document records what was found and what changed.
+**Status.** Implemented on `develop` on 2026-10-13. Covered by the Caraya suite `tests/unit tests/Run All Tests.vi` (7 tests, all passing). This document records what was found and what changed.
 
 **Problem.** When a client request got no reply after all retries, `Read Message.vi` returned `Command = ""`, an empty `Data` and **no error**. `Send and Receive Message.vi` (RemoteControl) passed that up as a successful reply, and the caller failed later and somewhere else. In the field this showed up as error 91 in the Lockin API's `getStatus.vi`, from Transport `Lockin_sweep`.
 
@@ -27,7 +27,7 @@ Working on it turned up three more defects in the same client retry path and one
 
 ## Tests
 
-`src/RemoteControl.ZMQ/Tests/unit tests/`. Each test uses its own port (55501 to 55506). `Test Helper - Echo Server.vi` runs a REP server in parallel with the client. It takes a reply delay, a first-reply-only option and an idle exit based on time since the last message.
+`tests/unit tests/`, members of `tests/RemoteControl.ZMQ.Tests.lvclass`. That class is a child of `RemoteControl.ZMQ.lvclass` and lives outside `src/`, so neither the tests nor Caraya ship in the package. As a child it can call the protected overrides. `ZMQ.Handle Error.vi` is community scope with the test class as friend, for `Test Handle Error Passes Timeout.vi`. Run the suite from the project, not by opening the VI by path through COM. Each test uses its own port (55501 to 55506). `Test Helper - Echo Server.vi` runs a REP server in parallel with the client. It takes a reply delay, a first-reply-only option and an idle exit based on time since the last message.
 
 | Test | Asserts |
 | --- | --- |
