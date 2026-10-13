@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-08-11 09:19:34" Creator="Patrick Irvin" Comments="" ID="1d675148661629ab6e7bda27e45d0804">
+<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-10-13 17:51:57" Creator="Patrick Irvin" Comments="" ID="81d8c7a6239ce45298bd2f617aead506">
   <Library_General_Settings>
     <Package_File_Name>Levylab_lib_remote_control_zmq</Package_File_Name>
-    <Library_Version>1.3.7.32</Library_Version>
+    <Library_Version>1.4.0.33</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>..\src</Library_Source_Folder>
     <Library_Output_Folder>..\builds\Package</Library_Output_Folder>
@@ -63,9 +63,7 @@
 - A request that gets no reply now returns error 123 (timeout). In 1.3.7.30 it returned an empty reply with no error, which callers saw as other errors (error 91 in the Lockin getStatus).
 - Retries re-send the original command with the caller's timeout. Before, they sent HELP and switched to a fixed 500 ms timeout.
 - Close Connection always closes the socket, and releases the ZMQ context only for a socket it closed. This fixes a LabVIEW hang in zmq_ctx_destroy after a timeout.
-- Unit tests added under tests/ (not part of the package).
-
-Rebuild applications that include RemoteControl.ZMQ (for example Multichannel Lockin) to pick up the fixes.</Release_Notes>
+- Unit tests added under tests/ (not part of the package).</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -258,7 +256,7 @@ Rebuild applications that include RemoteControl.ZMQ (for example Multichannel Lo
         <Path>..\src\ZMQ.ContextManager</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>5C7D71FDC586414F180890B51B747AF5</GUID>
+      <GUID>41D8DAF5A6F515C29CA79911A1C21B6B</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -321,7 +319,7 @@ Rebuild applications that include RemoteControl.ZMQ (for example Multichannel Lo
         <Path>..\src\RemoteControl.ZMQ\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>EAF83A98614D44708A87018E117D5C55</GUID>
+      <GUID>49D2A1331FBCF6E7AC55897DE771319C</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -426,7 +424,7 @@ Rebuild applications that include RemoteControl.ZMQ (for example Multichannel Lo
         <Path>..\src\RemoteControl.ZMQ\Methods (Overrides)\Get Connections.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>9177CE88EF881D71E8DE7FAACE7BF11F</GUID>
+      <GUID>6FD826154E4F192182BAAF128F5C7E5C</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -503,7 +501,7 @@ Rebuild applications that include RemoteControl.ZMQ (for example Multichannel Lo
         <Path>..\src\RemoteControl.ZMQ\Tests\ZMQ Req Test.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>BA5816DF6C0168A92DC8C77CF9442162</GUID>
+      <GUID>3E857512F06480EA46B1426949A0558A</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -608,7 +606,7 @@ Rebuild applications that include RemoteControl.ZMQ (for example Multichannel Lo
         <Path>..\src\ZMQ.ContextManager\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>B1886E70AA4D4E4579E8BAE0D05D9A8F</GUID>
+      <GUID>AD9E210E51B675628B84DFE22B9076D2</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -685,7 +683,7 @@ Rebuild applications that include RemoteControl.ZMQ (for example Multichannel Lo
         <Path>..\src\ZMQ.ContextManager\private\ReftoDVR.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>311D20EE20E5ACA193C6F44F914F1594</GUID>
+      <GUID>5494B39886346824C879976BBCD67CF5</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -776,7 +774,7 @@ Rebuild applications that include RemoteControl.ZMQ (for example Multichannel Lo
         <Path>..\src\RemoteControl.ZMQ\private\Build Endpoint.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>73BB1F336C3351BB1602BCCA44627C5C</GUID>
+      <GUID>99BCE6206401668310552D55EB37EF5A</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
