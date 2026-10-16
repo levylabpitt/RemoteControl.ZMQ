@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-10-15 22:37:29" Creator="Patrick Irvin" Comments="" ID="375ca5ec648e3413a5f7e71fed2c72f0">
+<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-10-16 16:53:42" Creator="Patrick Irvin" Comments="" ID="2937d943b29722079f9f7a9cde26a0af">
   <Library_General_Settings>
     <Package_File_Name>Levylab_lib_remote_control_zmq</Package_File_Name>
-    <Library_Version>1.5.0.34</Library_Version>
+    <Library_Version>1.5.1.35</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>..\src</Library_Source_Folder>
     <Library_Output_Folder>..\builds\Package</Library_Output_Folder>
@@ -58,12 +58,14 @@
       <Copyright/>
       <Packager/>
       <URL>https://github.com/levylabpitt/Instrument-Framework</URL>
-      <Release_Notes>Requires labview-zmq 3.7.0 or later (libzmq 4.3.4), which fixes LabVIEW aborting (“Socket operation on non-socket”) or error 1097 when a client is waiting while its server restarts.
+      <Release_Notes>### 1.5.1
 
-- The ZMQ context is now owned by a background VI and lives until Force Cleanup or application exit. Before, it was tied to whichever VI first used ZeroMQ and stopped working for everyone when that VI stopped.
-- Reconnects back off (50 ms doubling) while a server is down, instead of about 8 per second.
-- Fixed a socket leak when a connect fails. Servers keep their last reply on close (LINGER 200 ms).
-- The ZMQ context owner now stops after 2 s with no connections, so applications exit cleanly when closed.</Release_Notes>
+Fixes LabVIEW crashing ("ZeroMQ Abort", then error 1097) when a client keeps retrying while its server is down (levylabpitt/RemoteControl.ZMQ#2).
+
+- A client now checks that the server's port is open before creating a ZeroMQ connection, so it no longer makes refused connections inside libzmq.
+- Opening a client succeeds even if the server is not running yet; the first request connects once the server is up.
+- While the server is down or restarting, a request waits for it and returns error 123 if it does not come back in time (about 15 s at most).
+- Fixed a socket leak on connect errors that could stop the shared ZeroMQ context from shutting down.</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -256,7 +258,7 @@
         <Path>..\src\ZMQ.ContextManager</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>D8A0F854C8962D7C344A07342870803A</GUID>
+      <GUID>1C090902575E7C33D133D26ED879EFF9</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -319,7 +321,7 @@
         <Path>..\src\RemoteControl.ZMQ\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>9BC43712AD285CFD1A41D20BA270A020</GUID>
+      <GUID>AF80C0CCEF4DC3B0426C50A5E25005DC</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -424,7 +426,7 @@
         <Path>..\src\RemoteControl.ZMQ\Methods (Overrides)\Get Connections.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>AC5C9648EFBD2BD8068F007A3CBC56CB</GUID>
+      <GUID>2B2A2A986B5DF406589E66AB6FFF70BD</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -501,7 +503,7 @@
         <Path>..\src\RemoteControl.ZMQ\Tests\ZMQ Req Test.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>547BC4019E39D08775668290F7BEC0FB</GUID>
+      <GUID>A10A91750F53F06F852EC4CE1E91CBAE</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -606,7 +608,7 @@
         <Path>..\src\ZMQ.ContextManager\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>993E38A8ECD46E259F981FF537A1DF2A</GUID>
+      <GUID>80EE77D2BE5A2F38B2487C18FD546F1C</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -683,7 +685,7 @@
         <Path>..\src\ZMQ.ContextManager\private\ReftoDVR.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>33572B6ED5492D966A992AFBB40F26F1</GUID>
+      <GUID>94838E9D4DE4321CC9F9032B684FE464</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -774,7 +776,7 @@
         <Path>..\src\RemoteControl.ZMQ\private\Build Endpoint.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>5AE677E1F87D1FC5E8AC39A8D394FB26</GUID>
+      <GUID>580BCF2991A2C27278AFC77117C9604D</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
