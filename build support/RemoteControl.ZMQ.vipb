@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-10-15 14:37:52" Creator="Patrick Irvin" Comments="" ID="1de8ad89c1ba48cc370582ef4af428b6">
+<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-10-15 22:37:29" Creator="Patrick Irvin" Comments="" ID="375ca5ec648e3413a5f7e71fed2c72f0">
   <Library_General_Settings>
     <Package_File_Name>Levylab_lib_remote_control_zmq</Package_File_Name>
-    <Library_Version>1.4.0.33</Library_Version>
+    <Library_Version>1.5.0.34</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>..\src</Library_Source_Folder>
     <Library_Output_Folder>..\builds\Package</Library_Output_Folder>
@@ -60,9 +60,10 @@
       <URL>https://github.com/levylabpitt/Instrument-Framework</URL>
       <Release_Notes>Requires labview-zmq 3.7.0 or later (libzmq 4.3.4), which fixes LabVIEW aborting (“Socket operation on non-socket”) or error 1097 when a client is waiting while its server restarts.
 
-The ZMQ context is now owned by a background VI and lives until Force Cleanup or application exit. Before, it was tied to whichever VI first used ZeroMQ and stopped working for everyone when that VI stopped.
-Reconnects back off (50 ms doubling) while a server is down, instead of about 8 per second.
-Fixed a socket leak when a connect fails. Servers keep their last reply on close (LINGER 200 ms).</Release_Notes>
+- The ZMQ context is now owned by a background VI and lives until Force Cleanup or application exit. Before, it was tied to whichever VI first used ZeroMQ and stopped working for everyone when that VI stopped.
+- Reconnects back off (50 ms doubling) while a server is down, instead of about 8 per second.
+- Fixed a socket leak when a connect fails. Servers keep their last reply on close (LINGER 200 ms).
+- The ZMQ context owner now stops after 2 s with no connections, so applications exit cleanly when closed.</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -255,7 +256,7 @@ Fixed a socket leak when a connect fails. Servers keep their last reply on close
         <Path>..\src\ZMQ.ContextManager</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>E538B47FD4FE0E47A65E38E5E31AC7EF</GUID>
+      <GUID>D8A0F854C8962D7C344A07342870803A</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -318,7 +319,7 @@ Fixed a socket leak when a connect fails. Servers keep their last reply on close
         <Path>..\src\RemoteControl.ZMQ\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>3CFBC607A11B339422E39DD10D1BAC7F</GUID>
+      <GUID>9BC43712AD285CFD1A41D20BA270A020</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -423,7 +424,7 @@ Fixed a socket leak when a connect fails. Servers keep their last reply on close
         <Path>..\src\RemoteControl.ZMQ\Methods (Overrides)\Get Connections.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>7B3B7CB21ABC8B46B91FFDDD34E0BFD6</GUID>
+      <GUID>AC5C9648EFBD2BD8068F007A3CBC56CB</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -500,7 +501,7 @@ Fixed a socket leak when a connect fails. Servers keep their last reply on close
         <Path>..\src\RemoteControl.ZMQ\Tests\ZMQ Req Test.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>1143185A284265C91D142AFE75476DDA</GUID>
+      <GUID>547BC4019E39D08775668290F7BEC0FB</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -605,7 +606,7 @@ Fixed a socket leak when a connect fails. Servers keep their last reply on close
         <Path>..\src\ZMQ.ContextManager\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>882960493B9ED492C5C0FD64F95A3C90</GUID>
+      <GUID>993E38A8ECD46E259F981FF537A1DF2A</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -682,7 +683,7 @@ Fixed a socket leak when a connect fails. Servers keep their last reply on close
         <Path>..\src\ZMQ.ContextManager\private\ReftoDVR.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>0B36D8479264B2F746B69403C90AC336</GUID>
+      <GUID>33572B6ED5492D966A992AFBB40F26F1</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -773,7 +774,7 @@ Fixed a socket leak when a connect fails. Servers keep their last reply on close
         <Path>..\src\RemoteControl.ZMQ\private\Build Endpoint.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>4807B0B6D0C9479E113FA38480273C19</GUID>
+      <GUID>5AE677E1F87D1FC5E8AC39A8D394FB26</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
