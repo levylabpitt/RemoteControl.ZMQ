@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-10-17 11:37:53" Creator="Patrick Irvin" Comments="" ID="8f8c4a32c7843f97feb0b8b4bc5b6ea5">
+<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-10-19 12:02:06" Creator="Patrick Irvin" Comments="" ID="eea327182837964790816fd093c22ccc">
   <Library_General_Settings>
     <Package_File_Name>Levylab_lib_remote_control_zmq</Package_File_Name>
-    <Library_Version>1.5.2.36</Library_Version>
+    <Library_Version>1.5.3.37</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>..\src</Library_Source_Folder>
     <Library_Output_Folder>..\builds\Package</Library_Output_Folder>
@@ -58,10 +58,10 @@
       <Copyright/>
       <Packager/>
       <URL>https://github.com/levylabpitt/Instrument-Framework</URL>
-      <Release_Notes>### 1.5.2
+      <Release_Notes>### 1.5.3
 
-- Fixes an error 4 dialog ("End of file encountered" in Log Status.vi) that could appear when an instrument closed while ZMQ diagnostic logging was on. Logging errors are now ignored and never reach the caller.
-- The logging setting (%LOCALAPPDATA%\LevyLab\ZMQ\confg.ini) is read once per process; restart LabVIEW or the application after changing it.</Release_Notes>
+- Fixes error 5559 ("ZMQ context owner did not start") after a socket was left open: a stuck ZeroMQ context no longer blocks new connections; a fresh context is started instead.
+- Known issue: a context stuck this way can still keep LabVIEW or an application from quitting ("Resetting VI"); end it from Task Manager if that happens.</Release_Notes>
     </Description>
     <Destinations>
       <Toolkit_VIs>
@@ -254,7 +254,7 @@
         <Path>..\src\ZMQ.ContextManager</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>4D6C8F6E716BAB3E8DE592D86C160FD7</GUID>
+      <GUID>7D8D0441C7DC6AC0C93CA57A929C85AF</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -317,7 +317,7 @@
         <Path>..\src\RemoteControl.ZMQ\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>621CB0E35E8EC89BA1054E9A89CA3781</GUID>
+      <GUID>6EB2EFF32B13BCD718C9D65CDB07376E</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -422,7 +422,7 @@
         <Path>..\src\RemoteControl.ZMQ\Methods (Overrides)\Get Connections.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>BA3541251BA9A19ECA322547E8B747D4</GUID>
+      <GUID>73CABE64C5C6DF3ABC98DF7FDB27D211</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -499,7 +499,7 @@
         <Path>..\src\RemoteControl.ZMQ\Tests\ZMQ Req Test.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>19EE306A4D59D4522B2D07ABE91E84F4</GUID>
+      <GUID>8C21D4DFFEE34E49A1D9D084ACD818DF</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -604,7 +604,7 @@
         <Path>..\src\ZMQ.ContextManager\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>148CA3242680483536162A88462CC354</GUID>
+      <GUID>B9C64DF27F7D7FAD7187622FFEADDCA8</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -681,7 +681,7 @@
         <Path>..\src\ZMQ.ContextManager\private\ReftoDVR.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>C6A20EC12A43CCC6F654B31D3CCAF369</GUID>
+      <GUID>3C15A37DEC7B80BEA8946241816AD9A7</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -772,7 +772,7 @@
         <Path>..\src\RemoteControl.ZMQ\private\Build Endpoint.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>DE92E532F60B81AE53605D6D9D2F2FB2</GUID>
+      <GUID>35144E0E2F7BFE79497AE72C3CB0697B</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
