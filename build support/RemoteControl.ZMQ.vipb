@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-10-20 13:10:58" Creator="Patrick Irvin" Comments="" ID="ae6dfa80b57af2cdbb92a23d71e38cd7">
+<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-10-20 13:21:38" Creator="Patrick Irvin" Comments="" ID="515cb8cbc5e188f2a6f708ee565fd9ed">
   <Library_General_Settings>
     <Package_File_Name>Levylab_lib_remote_control_zmq</Package_File_Name>
-    <Library_Version>1.5.4.37</Library_Version>
+    <Library_Version>1.5.4.38</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>..\src</Library_Source_Folder>
     <Library_Output_Folder>..\builds\Package</Library_Output_Folder>
@@ -253,7 +253,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\ZMQ.ContextManager</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>FA3ED98B0B01ECCBABE236F2E76B8EA3</GUID>
+      <GUID>2088586AE0EEA9732951A24D86E07404</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -316,7 +316,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\RemoteControl.ZMQ\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>7514FEB461956281069B5EBB4F1C1A07</GUID>
+      <GUID>84D9253794056F660D082A1B5B62277C</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -421,7 +421,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\RemoteControl.ZMQ\Methods (Overrides)\Get Connections.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6686DFB01927B5D89908B3F13E4CFBA7</GUID>
+      <GUID>1B6D24965082B501F70F6D196DF87494</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -498,7 +498,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\RemoteControl.ZMQ\Tests\ZMQ Req Test.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>B4BB236167ADAE47F4D0BEB64ACCE194</GUID>
+      <GUID>2BE71C4D4108B971FC66A5D7BC82D0EC</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -603,7 +603,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\ZMQ.ContextManager\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>1BF02EFFF7D409D82277C269B63FEF8F</GUID>
+      <GUID>69D0369744F9C6C14ABDB05EDF94D4A6</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -680,7 +680,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\ZMQ.ContextManager\private\ReftoDVR.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>B3A5DE9574EF58EAFC7539164BED81CB</GUID>
+      <GUID>0B8C9EF0F4C3F131B85C90787571E97C</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -771,7 +771,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\RemoteControl.ZMQ\private\Build Endpoint.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>1D20FFBEC69B88662D45966CDB67CD4D</GUID>
+      <GUID>6A2559CD905E9EFE7417A842C396B9FA</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
