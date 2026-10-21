@@ -1,2 +1,21 @@
-- name: Issue Label Manager Action
-  uses: lannonbr/issue-label-manager-action@5.0.0
+name: Sync issue labels
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/labels.json
+  workflow_dispatch:
+
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Issue Label Manager Action
+        uses: lannonbr/issue-label-manager-action@5.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
