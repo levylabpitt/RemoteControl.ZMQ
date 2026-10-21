@@ -1,0 +1,2 @@
+- name: Issue Label Manager Action
+  uses: lannonbr/issue-label-manager-action@5.0.0
