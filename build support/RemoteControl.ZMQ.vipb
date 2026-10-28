@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-10-20 13:21:38" Creator="Patrick Irvin" Comments="" ID="515cb8cbc5e188f2a6f708ee565fd9ed">
+<VI_Package_Builder_Settings Version="2018" Created_Date="2023-11-21 19:39:20" Modified_Date="2026-10-28 16:41:46" Creator="Patrick Irvin" Comments="" ID="31425cde06c514fca8082195560a2491">
   <Library_General_Settings>
     <Package_File_Name>Levylab_lib_remote_control_zmq</Package_File_Name>
-    <Library_Version>1.5.4.38</Library_Version>
+    <Library_Version>1.5.5.38</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>..\src</Library_Source_Folder>
     <Library_Output_Folder>..\builds\Package</Library_Output_Folder>
@@ -28,7 +28,7 @@
       <External_Dependencies>oglib_numeric &gt;= 4.1.0.8</External_Dependencies>
       <External_Dependencies>oglib_string &gt;= 5.0.0.25</External_Dependencies>
       <External_Dependencies>oglib_time &gt;= 4.0.1.3</External_Dependencies>
-      <External_Dependencies>prirvin_lib_json_rpc &gt;= 1.2.6.15</External_Dependencies>
+      <External_Dependencies>prirvin_lib_json_rpc &gt;= 1.3.1.19</External_Dependencies>
       <Additional_External_Dependencies>levylab_lib_remote_control &gt;=1.4.2.21</Additional_External_Dependencies>
       <Direct_Dependencies>jdp_science_jsontext-1.9.1.125</Direct_Dependencies>
       <Direct_Dependencies>jdp_science_lib_common_utilities-1.4.2.19</Direct_Dependencies>
@@ -41,7 +41,7 @@
       <Direct_Dependencies>oglib_numeric-4.1.0.8</Direct_Dependencies>
       <Direct_Dependencies>oglib_string-5.0.0.25</Direct_Dependencies>
       <Direct_Dependencies>oglib_time-4.0.1.3</Direct_Dependencies>
-      <Direct_Dependencies>prirvin_lib_json_rpc-1.2.6.15</Direct_Dependencies>
+      <Direct_Dependencies>prirvin_lib_json_rpc-1.3.1.19</Direct_Dependencies>
     </Package_Dependencies>
     <Custom_Action_VIs>
       <Pre-Build_VI/>
@@ -58,7 +58,7 @@
       <Copyright/>
       <Packager/>
       <URL>https://github.com/levylabpitt/Instrument-Framework</URL>
-      <Release_Notes>### 1.5.4
+      <Release_Notes>### 1.5.5
 
 built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead of WSAPoll and fixes the “pfd.revents &amp; POLLIN” assertion crashes (ZeroMQ Abort, then error 1097) when a client retries against a closed port or a restarting server.</Release_Notes>
     </Description>
@@ -253,7 +253,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\ZMQ.ContextManager</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2088586AE0EEA9732951A24D86E07404</GUID>
+      <GUID>BDA8929FB5166386A46BB65D2997A7B9</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -316,7 +316,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\RemoteControl.ZMQ\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>84D9253794056F660D082A1B5B62277C</GUID>
+      <GUID>7D3DCDA89FC777E25C245A8150D295F2</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -421,7 +421,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\RemoteControl.ZMQ\Methods (Overrides)\Get Connections.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>1B6D24965082B501F70F6D196DF87494</GUID>
+      <GUID>EEFDF1FCE369B2A7CCAC3976279BE2F3</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -498,7 +498,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\RemoteControl.ZMQ\Tests\ZMQ Req Test.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>2BE71C4D4108B971FC66A5D7BC82D0EC</GUID>
+      <GUID>3DE532E0C0E35E6E84D3EBED3ED176B5</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>0</Parent_Palette_Index>
@@ -603,7 +603,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\ZMQ.ContextManager\private</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>69D0369744F9C6C14ABDB05EDF94D4A6</GUID>
+      <GUID>995AA199D49913E07F5CFD38078EB880</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>4</Parent_Palette_Index>
@@ -680,7 +680,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\ZMQ.ContextManager\private\ReftoDVR.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>0B8C9EF0F4C3F131B85C90787571E97C</GUID>
+      <GUID>7480C15A325BA8EC2B74B30FB5EC51DD</GUID>
     </Functions_Palette_Data>
     <Functions_Palette_Data>
       <Parent_Palette_Index>1</Parent_Palette_Index>
@@ -771,7 +771,7 @@ built with labview-zmq 3.7.1, which ships libzmq 4.3.5 built with select instead
         <Path>..\src\RemoteControl.ZMQ\private\Build Endpoint.vi</Path>
         <VI_Title/>
       </Items_Data>
-      <GUID>6A2559CD905E9EFE7417A842C396B9FA</GUID>
+      <GUID>E51A54F93E9FCFFB8DC31D3345DBEF56</GUID>
     </Functions_Palette_Data>
   </Library_Palette_Definition>
 </VI_Package_Builder_Settings>
